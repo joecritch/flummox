@@ -95,7 +95,7 @@ const FluxComponent = React.createClass({
       return <React.View>{React.Children.map(children, this.wrapChild)}</React.View>;
     }
   }
-}
+});
 
 assign(
   FluxComponent.prototype,
