@@ -36,7 +36,7 @@
  * class ParentComponent extends React.Component {
  *
  *   render() {
- *     <FluxComponent connectToStore="fooStore">
+ *     <FluxComponent connectToStores="fooStore">
  *       <ChildComponent />
  *     </FluxComponent>
  *   }
@@ -47,14 +47,9 @@
  * and props that sync with each of the state keys of fooStore.
  */
 
-import React from 'react';
+import React from 'react/addons';
 import { instanceMethods, staticProperties } from './reactComponentMethods';
 import assign from 'object-assign';
-
-const FluxComponentPropTypes = {
-  render: React.PropTypes.func,
-  stateGetter: React.PropTypes.func,
-};
 
 class FluxComponent extends React.Component {
   constructor(props, context) {
@@ -68,7 +63,7 @@ class FluxComponent extends React.Component {
   }
 
   wrapChild(child) {
-    return React.cloneElement(
+    return React.addons.cloneWithProps(
       child,
       this.getChildProps()
     );
@@ -114,6 +109,5 @@ assign(
 );
 
 assign(FluxComponent, staticProperties);
-assign(FluxComponent.propTypes, FluxComponentPropTypes);
 
 export default FluxComponent;

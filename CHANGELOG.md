@@ -9,7 +9,27 @@ Tags:
 - [Internal]
 - [Polish]
 
-## 3.1.0 (pending release)
+## 3.3.0
+  - **New Feature**
+    - `registerAll()` and `registerAllAsync()` [@hugobessaa](https://github.com/hugobessaa)
+
+## 3.2.1
+- **Bugfix**
+  - Fix connectToStores HoC to pass state instead of props.
+
+## 3.2.0
+- **New Feature**
+  - New higher-order component connectToStores, because why not. It works just like FluxComponent.
+
+## 3.1.2
+- **Bugfix**
+  - Switch back to using `cloneWithProps()` instead of `cloneElement()` to fix context passing with FluxComponent. See [this issue](https://github.com/acdlite/flummox/issues/111#issuecomment-85172486) for an explanation.
+
+## 3.1.1
+- **Bugfix**
+  - Add dummy handler to internal promise to prevent false warnings.
+
+## 3.1.0
 - **New Feature**
   - Flux is passed as second parameter to custom render function of FluxComponent.
   - New Store method `getStateAsObject()` is used inside default state getters for `connectToStores()`. This should be overridden alongside `Store.assignState()`.
