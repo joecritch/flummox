@@ -26,6 +26,8 @@ module.exports = {
     libraryTarget: 'var'
   },
 
+  devtool: 'inline-source-map',
+
   plugins: plugins,
 
   resolve: {
